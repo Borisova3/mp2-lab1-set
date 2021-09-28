@@ -13,6 +13,7 @@ static TBitField FAKE_BITFIELD(1);
 
 TBitField::TBitField(int len)
 {
+    this->BitLen = len;
 }
 
 TBitField::TBitField(const TBitField &bf) // конструктор копирования
@@ -37,7 +38,7 @@ TELEM TBitField::GetMemMask(const int n) const // битовая маска дл
 
 int TBitField::GetLength(void) const // получить длину (к-во битов)
 {
-  return FAKE_INT;
+  return this->BitLen;
 }
 
 void TBitField::SetBit(const int n) // установить бит
