@@ -24,6 +24,7 @@ TSet::TSet(const TSet &s) : BitField(-1)
 // конструктор преобразования типа
 TSet::TSet(const TBitField &bf) : BitField(-1)
 {
+	//комментарий!!!
 }
 
 TSet::operator TBitField()

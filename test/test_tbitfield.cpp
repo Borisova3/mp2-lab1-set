@@ -14,7 +14,7 @@ TEST(TBitField, can_get_length)
   EXPECT_EQ(3, bf.GetLength());
 }
 
-TEST(TBitField, new_bitfield_is_set_to_zero)
+TEST(TBitField, new_bitfield_is_set_to_zero)   //новое битовое поле равно нулю
 {
   TBitField bf(100);
 
@@ -27,7 +27,7 @@ TEST(TBitField, new_bitfield_is_set_to_zero)
   EXPECT_EQ(0, sum);
 }
 
-TEST(TBitField, can_set_bit)
+TEST(TBitField, can_set_bit)   //может установить бит
 {
   TBitField bf(10);
 
@@ -37,7 +37,7 @@ TEST(TBitField, can_set_bit)
   EXPECT_NE(0, bf.GetBit(3));
 }
 
-TEST(TBitField, can_clear_bit)
+TEST(TBitField, can_clear_bit)   //может убрать бит
 {
   TBitField bf(10);
 
@@ -50,17 +50,18 @@ TEST(TBitField, can_clear_bit)
   EXPECT_EQ(0, bf.GetBit(bitIdx));
 }
 
-TEST(TBitField, throws_when_create_bitfield_with_negative_length)
+TEST(TBitField, throws_when_create_bitfield_with_negative_length)  //выбрасывает при создании битового поля с отрицательной длиной
+
 {
   ASSERT_ANY_THROW(TBitField bf(-3));
-}
+} //обработка исключений
 
 TEST(TBitField, throws_when_set_bit_with_negative_index)
 {
   TBitField bf(10);
 
   ASSERT_ANY_THROW(bf.SetBit(-3));
-}
+}//обработка исключений
 
 TEST(TBitField, throws_when_set_bit_with_too_large_index)
 {
@@ -97,7 +98,7 @@ TEST(TBitField, throws_when_clear_bit_with_too_large_index)
   ASSERT_ANY_THROW(bf.ClrBit(11));
 }
 
-TEST(TBitField, can_assign_bitfields_of_equal_size)
+TEST(TBitField, can_assign_bitfields_of_equal_size) //может назначать битовые поля одинакового размера
 {
   const int size = 2;
   TBitField bf1(size), bf2(size);
