@@ -112,7 +112,7 @@ TEST(TBitField, can_assign_bitfields_of_equal_size) //может назначать битовые по
   EXPECT_NE(0, bf2.GetBit(1));
 }
 
-TEST(TBitField, assign_operator_changes_bitfield_size)
+TEST(TBitField, assign_operator_changes_bitfield_size)  //назначение оперетора изменяет размер битового поля
 {
   const int size1 = 2, size2 = 5;
   TBitField bf1(size1), bf2(size2);
@@ -125,7 +125,7 @@ TEST(TBitField, assign_operator_changes_bitfield_size)
   EXPECT_EQ(2, bf2.GetLength());
 }
 
-TEST(TBitField, can_assign_bitfields_of_non_equal_size)
+TEST(TBitField, can_assign_bitfields_of_non_equal_size)  //может назначать битовые поля неравного размера
 {
   const int size1 = 2, size2 = 5;
   TBitField bf1(size1), bf2(size2);
@@ -139,7 +139,7 @@ TEST(TBitField, can_assign_bitfields_of_non_equal_size)
   EXPECT_NE(0, bf2.GetBit(1));
 }
 
-TEST(TBitField, compare_equal_bitfields_of_equal_size)
+TEST(TBitField, compare_equal_bitfields_of_equal_size) //сравнение одинаковых битовых полей одинкакого размера
 {
   const int size = 2;
   TBitField bf1(size), bf2(size);
@@ -152,7 +152,7 @@ TEST(TBitField, compare_equal_bitfields_of_equal_size)
   EXPECT_EQ(bf1, bf2);
 }
 
-TEST(TBitField, or_operator_applied_to_bitfields_of_equal_size)
+TEST(TBitField, or_operator_applied_to_bitfields_of_equal_size) //опретор "или" применяется к битовым полям одинакового размера
 {
   const int size = 4;
   TBitField bf1(size), bf2(size), expBf(size);
@@ -171,7 +171,7 @@ TEST(TBitField, or_operator_applied_to_bitfields_of_equal_size)
   EXPECT_EQ(expBf, bf1 | bf2);
 }
 
-TEST(TBitField, or_operator_applied_to_bitfields_of_non_equal_size)
+TEST(TBitField, or_operator_applied_to_bitfields_of_non_equal_size) //оператор "или" применяется к битовым полям неравного размера
 {
   const int size1 = 4, size2 = 5;
   TBitField bf1(size1), bf2(size2), expBf(size2);
@@ -190,7 +190,7 @@ TEST(TBitField, or_operator_applied_to_bitfields_of_non_equal_size)
   EXPECT_EQ(expBf, bf1 | bf2);
 }
 
-TEST(TBitField, and_operator_applied_to_bitfields_of_equal_size)
+TEST(TBitField, and_operator_applied_to_bitfields_of_equal_size) //оператор "и" применяется к битовым полям неравного размера 
 {
   const int size = 4;
   TBitField bf1(size), bf2(size), expBf(size);
@@ -224,7 +224,7 @@ TEST(TBitField, and_operator_applied_to_bitfields_of_non_equal_size)
   EXPECT_EQ(expBf, bf1 & bf2);
 }
 
-TEST(TBitField, can_invert_bitfield)
+TEST(TBitField, can_invert_bitfield) //может интервировать битовое поле (оперрация "отрицание ~)
 {
   const int size = 2;
   TBitField bf(size), negBf(size), expNegBf(size);
@@ -297,7 +297,7 @@ TEST(TBitField, can_invert_many_random_bits_bitfield)
   EXPECT_EQ(expNegBf, negBf);
 }
 
-TEST(TBitField, bitfields_with_different_bits_are_not_equal)
+TEST(TBitField, bitfields_with_different_bits_are_not_equal) //битовые поля с разными битами не равны
 {
   const int size = 4;
   TBitField bf1(size), bf2(size);

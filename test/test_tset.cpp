@@ -2,7 +2,7 @@
 
 #include <gtest.h>
 
-TEST(TSet, can_get_max_power_set)
+TEST(TSet, can_get_max_power_set)  //может получить максимальную мощность
 {
   const int size = 5;
   TSet set(size);
@@ -30,7 +30,7 @@ TEST(TSet, can_insert_existing_element)
   EXPECT_NE(set.IsMember(k), 0);
 }
 
-TEST(TSet, can_delete_non_existing_element)
+TEST(TSet, can_delete_non_existing_element)  //может удалить несуществующий элемент
 {
   const int size = 5, k = 3;
   TSet set(size);
@@ -51,7 +51,7 @@ TEST(TSet, can_delete_existing_element)
   EXPECT_EQ(set.IsMember(k), 0);
 }
 
-TEST(TSet, compare_two_sets_of_non_equal_sizes)
+TEST(TSet, compare_two_sets_of_non_equal_sizes)  //сравните два набора неравных размеров
 {
   const int size1 = 4, size2 = 6;
   TSet set1(size1), set2(size2);
@@ -123,7 +123,7 @@ TEST(TSet, can_assign_set_of_less_size)
   EXPECT_EQ(set1, set2);
 }
 
-TEST(TSet, can_insert_non_existing_element_using_plus_operator)
+TEST(TSet, can_insert_non_existing_element_using_plus_operator)  //можно вставить несуществующий элемент с помощью оператора "+"
 {
   const int size = 4;
   const int k = 3;
